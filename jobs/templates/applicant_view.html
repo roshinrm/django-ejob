@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <div class="container-fluid">
+    <div class="card text-center">
+    <h4 class="card-header font-weight-bold">{{job.title}}</h4>
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">{{job.companies.name}}</h6>
+        <p class="card-text font-weight-bold">Qualifications Requierd: {{job.qualification}}</p>
+        <p class="card-text font-weight-bold">Experiance Requierd: {{job.experiance}}</p>
+        <p class="card-text">{{job.description}}</p>
+        <p class="card-text font-weight-bold">Date Posted : {{job.date_created}}</p>
+        <div class="card-footer">
+        <a href="#" class="btn btn-primary">Apply</a>
+        <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

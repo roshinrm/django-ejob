@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container"><br>
+    <!--companies-->
+    <div class="card border-dark mb-3 shadow bg-white rounded">
+    <h5 class="card-title text-center">{{companies.name}}</h5>
+    <div class="media">
+    <img src="..." class="align-self-start m-5" alt="...">
+    <div class="media-body">
+        <p class="font-weight-bold">Email : {{companies.email}}</p>
+        <p class="font-weight-bold">Phone : {{companies.phone}}</p>
+        <p class="font-weight-bold">Address : {{companies.address}}</p>
+        <p>{{companies.description}}</p>
+    </div>
+    </div>
+    </div>
+    
+    <br>
+    <h4>Jobs posted : </h4>
+    <br>
+    <!--jobs-->
+    <div class='row'>
+
+        {% for i in jobs %}
+
+        <div class="col-md-6 mb-3">
+            <div class="card border-dark mb-3 shadow bg-white rounded" style="width: 33rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Qualification : {{i.qualification}}</h6>
+                    <p class="card-text">Experiance : {{i.experiance}}</p>
+                    <a href="{% url 'jobs' i.id %}" class="card-link">View</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock content %}
